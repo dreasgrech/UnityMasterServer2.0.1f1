@@ -1,9 +1,17 @@
-# Unity Master Server v2.0.1f1
-Source code and Windows built executables for the Unity Master Server v2.0.1f1 (2011)
+# Unity Networking Servers v2.0.1f1
+Source code and Windows built executables for the Unity Networking Servers toolkit v2.0.1f1:
+- Master Server v2.0.1f1
+- Facilitator v2.0.1f1
+- Connection Tester v2.0.1f1
+- Proxy Server v2.0.1f1
 
-The `MasterServer-2.0.1f1.zip` file was downloaded from https://web.archive.org/web/20120117235209/http://download.unity3d.com/master-server/MasterServer-2.0.1f1.zip
+Files downloaded from:
+- https://web.archive.org/web/20120117235209/http://download.unity3d.com/master-server/MasterServer-2.0.1f1.zip
+- https://web.archive.org/web/20120117235213/http://download.unity3d.com/master-server/Facilitator-2.0.1f1.zip
+- https://web.archive.org/web/20120117235214/http://download.unity3d.com/master-server/ConnTester-2.0.1f1.zip
+- https://web.archive.org/web/20120117235214/http://download.unity3d.com/master-server/ProxyServer-2.0.1f1.zip
 
-The solution was built using
+Solutions compiled and built using
 - Visual Studio 2008 v9.0.21022.8 RTM
 - Microsoft .NET Framework v3.5 SP1
 - Microsoft Windows 11
