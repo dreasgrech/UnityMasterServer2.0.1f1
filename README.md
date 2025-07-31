@@ -1,13 +1,16 @@
 # Unity Master Server v2.0.1f1
-Source code and built executables for the Unity Master Server v2.0.1f1 (2011)
+Source code and Windows built executables for the Unity Master Server v2.0.1f1 (2011)
 
 The `MasterServer-2.0.1f1.zip` file was downloaded from https://web.archive.org/web/20120117235209/http://download.unity3d.com/master-server/MasterServer-2.0.1f1.zip
 
 The solution was built using
 - Visual Studio 2008 v9.0.21022.8 RTM
 - Microsoft .NET Framework v3.5 SP1
+- Microsoft Windows 11
 
-The built `MasterServer.exe` files are in `\VisualStudio\Debug\MasterServer.exe` and `\VisualStudio\Release\MasterServer.exe`
+The built `MasterServer.exe` files for Windows are in:
+- `\VisualStudio\Debug\MasterServer.exe`
+- `\VisualStudio\Release\MasterServer.exe`
 
 ---
 
