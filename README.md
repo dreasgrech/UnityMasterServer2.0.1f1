@@ -39,3 +39,7 @@ https://web.archive.org/web/20120329202129/http://unity3d.com/support/documentat
 https://web.archive.org/web/20120412060510/http://unity3d.com/support/documentation/ScriptReference/MasterServer.html
 <img width="708" height="459" alt="image" src="https://github.com/user-attachments/assets/8bc8fc92-ce61-45bb-9f57-4a2285897929" />
 
+https://web.archive.org/web/20120408122958/http://unity3d.com/support/documentation/Components/net-MasterServer.html
+<img width="875" height="886" alt="image" src="https://github.com/user-attachments/assets/01f00c4f-7583-4f54-a89e-26030a8dbdf4" />
+<img width="888" height="940" alt="image" src="https://github.com/user-attachments/assets/750266bc-911c-4939-b203-ce734c371620" />
+<img width="870" height="350" alt="image" src="https://github.com/user-attachments/assets/3904e97d-b5dd-4fbe-a464-f03efa87334b" />
