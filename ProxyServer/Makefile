@@ -1,13 +1,13 @@
-# Unity Connection Tester Makefile
+# Unity Proxy Server Makefile
 # -------------------------------------
 
 CC      = g++
-DEFINES = -DUNITY_CONNECTIONTESTER
+DEFINES = -DUNITY_PROXYSERVER
 CFLAGS  = -Wall -lpthread $(DEFINES)
 DEBUG   = -ggdb
 INCLUDE = .
-PROGRAMNAME = ConnTester
-PROGRAMSOURCES = ConnTester.cpp
+PROGRAMNAME = ProxyServer
+PROGRAMSOURCES = ProxyServer.cpp
 
 # -------------------------------------
 
@@ -72,8 +72,7 @@ $(RAKNET_INCLUDE)/SuperFastHash.cpp\
 $(RAKNET_INCLUDE)/PluginInterface2.cpp\
 $(RAKNET_INCLUDE)/Itoa.cpp\
 $(RAKNET_INCLUDE)/RakThread.cpp\
-$(RAKNET_INCLUDE)/NatTypeDetectionServer.cpp\
-$(RAKNET_INCLUDE)/NatTypeDetectionCommon.cpp
+$(RAKNET_INCLUDE)/NatPunchthroughClient.cpp
 
 RAKNET_OBJECTS = $(RAKNET_SOURCES:.cpp=.o)
 

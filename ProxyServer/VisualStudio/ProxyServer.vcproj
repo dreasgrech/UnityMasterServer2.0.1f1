@@ -2,11 +2,11 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9,00"
-	Name="ConnTester"
-	ProjectGUID="{AD79406B-AF8A-42A9-9E72-B34D60F0B3A7}"
-	RootNamespace="ConnTester"
+	Name="ProxyServer"
+	ProjectGUID="{DBDB145C-9663-4F33-A8C2-C67927FA3EF2}"
+	RootNamespace="ProxyServer"
 	Keyword="Win32Proj"
-	TargetFrameworkVersion="131072"
+	TargetFrameworkVersion="196613"
 	>
 	<Platforms>
 		<Platform
@@ -18,11 +18,10 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="Debug"
-			IntermediateDirectory="Debug"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
-			CharacterSet="2"
+			CharacterSet="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -43,13 +42,12 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="../RakNet/Sources;../Common"
-				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;UNITY_CONNECTIONTESTER"
+				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
-				RuntimeLibrary="1"
+				RuntimeLibrary="3"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
-				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="4"
 			/>
 			<Tool
@@ -64,13 +62,9 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="ws2_32.lib"
-				OutputFile="$(OutDir)/ConnTester.exe"
 				LinkIncremental="2"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile="$(OutDir)/ConnTester.pdb"
 				SubSystem="1"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -97,11 +91,11 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="Release"
-			IntermediateDirectory="Release"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
-			CharacterSet="2"
+			CharacterSet="1"
+			WholeProgramOptimization="1"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -120,12 +114,14 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
+				Optimization="2"
+				EnableIntrinsicFunctions="true"
 				AdditionalIncludeDirectories="../RakNet/Sources;../Common"
-				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;UNITY_CONNECTIONTESTER"
-				RuntimeLibrary="0"
+				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
-				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -140,14 +136,11 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="ws2_32.lib"
-				OutputFile="$(OutDir)/ConnTester.exe"
 				LinkIncremental="1"
 				GenerateDebugInformation="true"
 				SubSystem="1"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
-				RandomizedBaseAddress="1"
-				DataExecutionPrevention="0"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -178,11 +171,35 @@
 	<Files>
 		<Filter
 			Name="Source Files"
-			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath="..\ConnTester.cpp"
+				RelativePath="..\ProxyServer.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\ProxyServer.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Common"
+			>
+			<File
+				RelativePath="..\Common\Log.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\Common\Log.h"
+				>
+			</File>
+			<File
+				RelativePath="..\Common\Utility.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\Common\Utility.h"
 				>
 			</File>
 		</Filter>
@@ -190,27 +207,15 @@
 			Name="RakNet"
 			>
 			<File
-				RelativePath="..\RakNet\Sources\_FindFirst.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\RakNet\Sources\_FindFirst.h"
-				>
-			</File>
-			<File
-				RelativePath="..\RakNet\Sources\AsynchronousFileIO.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\RakNet\Sources\AsynchronousFileIO.h"
-				>
-			</File>
-			<File
 				RelativePath="..\RakNet\Sources\BigInt.cpp"
 				>
 			</File>
 			<File
 				RelativePath="..\RakNet\Sources\BigInt.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\BigTypes.h"
 				>
 			</File>
 			<File
@@ -223,6 +228,10 @@
 			</File>
 			<File
 				RelativePath="..\RakNet\Sources\BitStream_NoTemplate.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\BitStream_NoTemplate.h"
 				>
 			</File>
 			<File
@@ -243,14 +252,6 @@
 			</File>
 			<File
 				RelativePath="..\RakNet\Sources\ClientContextStruct.h"
-				>
-			</File>
-			<File
-				RelativePath="..\RakNet\Sources\ConnectionGraph.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\RakNet\Sources\ConnectionGraph.h"
 				>
 			</File>
 			<File
@@ -275,6 +276,14 @@
 			</File>
 			<File
 				RelativePath="..\RakNet\Sources\DataCompressor.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\DirectoryDeltaTransfer.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\DirectoryDeltaTransfer.h"
 				>
 			</File>
 			<File
@@ -338,6 +347,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\RakNet\Sources\DS_Multilist.h"
+				>
+			</File>
+			<File
 				RelativePath="..\RakNet\Sources\DS_OrderedChannelHeap.h"
 				>
 			</File>
@@ -358,11 +371,19 @@
 				>
 			</File>
 			<File
+				RelativePath="..\RakNet\Sources\DS_StringKeyedHash.h"
+				>
+			</File>
+			<File
 				RelativePath="..\RakNet\Sources\DS_Table.cpp"
 				>
 			</File>
 			<File
 				RelativePath="..\RakNet\Sources\DS_Table.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\DS_ThreadsafeAllocatingQueue.h"
 				>
 			</File>
 			<File
@@ -386,6 +407,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\RakNet\Sources\EpochTimeToString.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\EpochTimeToString.h"
+				>
+			</File>
+			<File
 				RelativePath="..\RakNet\Sources\Export.h"
 				>
 			</File>
@@ -403,6 +432,10 @@
 			</File>
 			<File
 				RelativePath="..\RakNet\Sources\FileList.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\FileListNodeContext.h"
 				>
 			</File>
 			<File
@@ -426,11 +459,19 @@
 				>
 			</File>
 			<File
-				RelativePath="..\RakNet\Sources\FullyConnectedMesh.cpp"
+				RelativePath="..\RakNet\Sources\FormatString.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\RakNet\Sources\FullyConnectedMesh.h"
+				RelativePath="..\RakNet\Sources\FormatString.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\FunctionThread.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\FunctionThread.h"
 				>
 			</File>
 			<File
@@ -450,6 +491,38 @@
 				>
 			</File>
 			<File
+				RelativePath="..\RakNet\Sources\GridSectorizer.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\GridSectorizer.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\HTTPConnection.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\HTTPConnection.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\IncrementalReadInterface.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\IncrementalReadInterface.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\InlineFunctor.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\InlineFunctor.h"
+				>
+			</File>
+			<File
 				RelativePath="..\RakNet\Sources\InternalPacket.h"
 				>
 			</File>
@@ -462,19 +535,15 @@
 				>
 			</File>
 			<File
+				RelativePath="..\RakNet\Sources\Kbhit.h"
+				>
+			</File>
+			<File
 				RelativePath="..\RakNet\Sources\LinuxStrings.cpp"
 				>
 			</File>
 			<File
 				RelativePath="..\RakNet\Sources\LinuxStrings.h"
-				>
-			</File>
-			<File
-				RelativePath="..\RakNet\Sources\LogCommandParser.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\RakNet\Sources\LogCommandParser.h"
 				>
 			</File>
 			<File
@@ -502,19 +571,15 @@
 				>
 			</File>
 			<File
-				RelativePath="..\RakNet\Sources\NatTypeDetectionCommon.cpp"
+				RelativePath="..\RakNet\Sources\NativeTypes.h"
 				>
 			</File>
 			<File
-				RelativePath="..\RakNet\Sources\NatTypeDetectionCommon.h"
+				RelativePath="..\RakNet\Sources\NatPunchthroughClient.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\RakNet\Sources\NatTypeDetectionServer.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\RakNet\Sources\NatTypeDetectionServer.h"
+				RelativePath="..\RakNet\Sources\NatPunchthroughClient.h"
 				>
 			</File>
 			<File
@@ -542,6 +607,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\RakNet\Sources\PacketizedTCP.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\PacketizedTCP.h"
+				>
+			</File>
+			<File
 				RelativePath="..\RakNet\Sources\PacketLogger.cpp"
 				>
 			</File>
@@ -558,11 +631,31 @@
 				>
 			</File>
 			<File
+				RelativePath="..\RakNet\Sources\Platform.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\PluginInterface.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\PluginInterface.h"
+				>
+			</File>
+			<File
 				RelativePath="..\RakNet\Sources\PluginInterface2.cpp"
 				>
 			</File>
 			<File
 				RelativePath="..\RakNet\Sources\PluginInterface2.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\PS3Includes.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\RakAlloca.h"
 				>
 			</File>
 			<File
@@ -594,6 +687,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\RakNet\Sources\RakNetSmartPtr.h"
+				>
+			</File>
+			<File
 				RelativePath="..\RakNet\Sources\RakNetSocket.cpp"
 				>
 			</File>
@@ -610,6 +707,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\RakNet\Sources\RakNetTime.h"
+				>
+			</File>
+			<File
 				RelativePath="..\RakNet\Sources\RakNetTransport.cpp"
 				>
 			</File>
@@ -618,11 +719,23 @@
 				>
 			</File>
 			<File
+				RelativePath="..\RakNet\Sources\RakNetTransport2.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\RakNetTransport2.h"
+				>
+			</File>
+			<File
 				RelativePath="..\RakNet\Sources\RakNetTypes.cpp"
 				>
 			</File>
 			<File
 				RelativePath="..\RakNet\Sources\RakNetTypes.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\RakNetVersion.h"
 				>
 			</File>
 			<File
@@ -678,6 +791,30 @@
 				>
 			</File>
 			<File
+				RelativePath="..\RakNet\Sources\rdlmalloc-options.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\rdlmalloc.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\rdlmalloc.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\ReadyEvent.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\ReadyEvent.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\RefCountedObj.h"
+				>
+			</File>
+			<File
 				RelativePath="..\RakNet\Sources\ReliabilityLayer.cpp"
 				>
 			</File>
@@ -691,14 +828,6 @@
 			</File>
 			<File
 				RelativePath="..\RakNet\Sources\ReplicaEnums.h"
-				>
-			</File>
-			<File
-				RelativePath="..\RakNet\Sources\ReplicaManager.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\RakNet\Sources\ReplicaManager.h"
 				>
 			</File>
 			<File
@@ -719,6 +848,14 @@
 			</File>
 			<File
 				RelativePath="..\RakNet\Sources\Router.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\Router2.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\Router2.h"
 				>
 			</File>
 			<File
@@ -743,6 +880,14 @@
 			</File>
 			<File
 				RelativePath="..\RakNet\Sources\RSACrypt.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\SendToThread.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\SendToThread.h"
 				>
 			</File>
 			<File
@@ -775,6 +920,10 @@
 			</File>
 			<File
 				RelativePath="..\RakNet\Sources\SingleProducerConsumer.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\SocketIncludes.h"
 				>
 			</File>
 			<File
@@ -834,6 +983,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\RakNet\Sources\TeamBalancer.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\TeamBalancer.h"
+				>
+			</File>
+			<File
 				RelativePath="..\RakNet\Sources\TelnetTransport.cpp"
 				>
 			</File>
@@ -858,7 +1015,35 @@
 				>
 			</File>
 			<File
-				RelativePath="..\RakNet\Sources\Types.h"
+				RelativePath="..\RakNet\Sources\UDPForwarder.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\VariableDeltaSerializer.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\VariableDeltaSerializer.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\VariableListDeltaTracker.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\VariableListDeltaTracker.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\VariadicSQLParser.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\VariadicSQLParser.h"
+				>
+			</File>
+			<File
+				RelativePath="..\RakNet\Sources\WindowsIncludes.h"
 				>
 			</File>
 			<File
@@ -867,26 +1052,6 @@
 			</File>
 			<File
 				RelativePath="..\RakNet\Sources\WSAStartupSingleton.h"
-				>
-			</File>
-		</Filter>
-		<Filter
-			Name="Common"
-			>
-			<File
-				RelativePath="..\Common\Log.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\Common\Log.h"
-				>
-			</File>
-			<File
-				RelativePath="..\Common\Utility.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\Common\Utility.h"
 				>
 			</File>
 		</Filter>

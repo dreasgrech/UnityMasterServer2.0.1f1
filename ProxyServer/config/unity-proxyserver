@@ -1,23 +1,23 @@
 #! /bin/sh
 #
-# unity-conntester
+# unity-proxyserver
 #
 # Author:	Unity Technologies
 #
 # chkconfig:    2345 98 02
-# description:  A (NAT) connectivity testing service for 
-#               Unity game servers and clients.
-# processname:  ConnTester
-# pidfile:      /home/unityserver/Production/ConnTester/ConnTester.pid
+# description:  A proxy server for tunnelling traffic between
+#				Unity game servers and clients.
+# processname:  ProxyServer
+# pidfile:      /home/unityserver/Production/ProxyServer/ProxyServer.pid
 # config:       /etc/monitrc
 #
 # ------------------------------------
 # Change this to suit your setup
 
-BINARYNAME=ConnTester
-OPTIONS=""
+BINARYNAME=ProxyServer
+OPTIONS="-f 1.2.3.4:50005"
 
-HOMEDIR=/home/unityserver/Production/ConnTester
+HOMEDIR=/home/unityserver/Production/ProxyServer
 COMMAND="./${BINARYNAME} -d ${OPTIONS}"
 USERNAME=unityserver
 
