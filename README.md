@@ -16,9 +16,15 @@ Solutions compiled and built using
 - Microsoft .NET Framework v3.5 SP1
 - Microsoft Windows 11
 
-The built `MasterServer.exe` files for Windows are in:
-- `\VisualStudio\Debug\MasterServer.exe`
-- `\VisualStudio\Release\MasterServer.exe`
+The prebuilt (by me) Windows executables can be either downloaded directly from the Releases page (https://github.com/dreasgrech/UnityNetworkingServers-2.0.1f1/releases) or found in the following directories:
+- `\MasterServer\VisualStudio\Debug\MasterServer.exe`
+- `\MasterServer\VisualStudio\Release\MasterServer.exe`
+- `\Facilitator\VisualStudio\Debug\Facilitator.exe`
+- `\Facilitator\VisualStudio\Release\Facilitator.exe`
+- `\ConnectionTester\VisualStudio\Debug\ConnTester.exe`
+- `\ConnectionTester\VisualStudio\Release\ConnTester.exe`
+- `\ProxyServer\VisualStudio\Debug\ProxyServer.exe`
+- `\ProxyServer\VisualStudio\Release\ProxyServer.exe`
 
 ---
 
